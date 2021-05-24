@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
+import { LoginService } from '../login/login.service';
+// import { LoginService } from '../login/login.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlunosService {
 
-  constructor() { }
+  constructor(private adminPanel: LoginService) { }
 
   getAllAluno () {
+    console.log('chamei')
     return [
       { id:1 ,
         nome:'gustavo',
@@ -39,5 +42,34 @@ export class AlunosService {
        }
      }
      return null
+  }
+  getAdminPanel ():any {
+    if(this.adminPanel.adminpanel()){
+      return [
+        { id:1 ,
+          nome:'gustavo',
+          pagamento:'realizado',
+          valor:'45,90'
+        },
+        {
+          id:2 ,
+           nome:'sandro',
+           pagamento:'pendente',
+           valor:'20,90'},
+        {
+          id:3 ,
+           nome:'bete',
+           pagamento:'realizado',
+           valor:'30,50'},
+        {
+          id:4 ,
+          nome:'esther',
+          pagamento:'pendente',
+          valor:'20,00'
+        },
+      ]
+    }else{
+      return false
+    }
   }
 }

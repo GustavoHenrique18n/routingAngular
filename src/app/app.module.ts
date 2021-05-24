@@ -4,20 +4,23 @@ import { BrowserModule } from '@angular/platform-browser'
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { AlunosModule } from './alunos/alunos.module';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './login/login.service';
+// import { AlunosModule } from './alunos/alunos.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AlunosModule
+    // AlunosModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

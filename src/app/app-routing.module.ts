@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AlunosComponent } from './alunos/alunos.component';
-
+import { LoginComponent } from './login/login.component';
+import { GuardAuthGuard } from './guards/guard-auth.guard';
 
 const routes: Routes = [
+  {path:'aluno',
+   loadChildren: ()=>import('./alunos/alunos.module').then(m => m.AlunosModule),
+   canActivate:[ GuardAuthGuard ]
+  },
+  {path:'login', component:LoginComponent}
 ];
 
 @NgModule({

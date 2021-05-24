@@ -1,6 +1,7 @@
-<p>rota que lista todos os alunos</p>
-
-<div *ngFor="let aluno of getAluno">
-  <p>{{aluno.nome}}</p>
-  <a [routerLink]="['/aluno', aluno.id]">ver detalhe do aluno</a>
+<p>{{ office }}</p>
+<div *ngIf="adminpanel" >
+  <p *ngFor="let item of getAluno">{{ item.nome}}</p>
+</div>
+<div *ngFor="let item of payments">
+  {{item.pagamento}}
 </div>

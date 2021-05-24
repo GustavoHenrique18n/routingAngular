@@ -7,10 +7,10 @@ import { AlunoDetalheComponent } from './aluno-detalhe/aluno-detalhe.component';
 import { AlunoEditComponent } from './aluno-edit/aluno-edit.component';
 
 const alunosRoutes:any = [
-  {path:'aluno' , component: AlunosComponent },
-  {path:'aluno/new' , component: AlunoNewComponent },
-  {path:'aluno/:id' , component: AlunoDetalheComponent},
-  {path:'aluno/:id/edit' , component: AlunoEditComponent}
+  {path:'' , component: AlunosComponent,},
+  {path:'new' , component: AlunoNewComponent },
+  {path:':id' , component: AlunoDetalheComponent},
+  {path:':id/edit' , component: AlunoEditComponent}
 ]
 
 @NgModule({

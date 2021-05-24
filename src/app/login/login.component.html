@@ -1,0 +1,23 @@
+<input type="checkbox" (click)="admin = !admin"><br><br>
+
+<div *ngIf="admin">
+  <p>campo para user</p>
+  <label for="">nome</label><br><br>
+  <input [(ngModel)]="user.nome" type="text" ><br><br>
+  <label  for="">senha</label><br><br>
+  <input [(ngModel)]="user.senha" type="password"><br><br>
+  <button (click)="auth()">login</button>
+</div>
+
+
+<div *ngIf="!admin">
+  <p>campo para adm</p>
+  <label for="">nome</label><br><br>
+  <input [(ngModel)]="user.nome" type="text" ><br><br>
+  <label  for="">senha</label><br><br>
+  <input [(ngModel)]="user.senha" type="password"><br><br>
+  <button (click)="authAdmin()">login</button>
+</div>
+
+
+
