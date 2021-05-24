@@ -1,0 +1,6 @@
+<p>rota que lista todos os alunos</p>
+
+<div *ngFor="let aluno of getAluno">
+  <p>{{aluno.nome}}</p>
+  <a [routerLink]="['/aluno', aluno.id]">ver detalhe do aluno</a>
+</div>
